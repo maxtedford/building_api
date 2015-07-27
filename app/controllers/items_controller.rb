@@ -3,9 +3,7 @@ class ItemsController < ApplicationController
     @items = Item.all
     
     respond_to do |format|
-      format.html do
-        @items
-      end
+      format.html { @items }
     end
   end
 
