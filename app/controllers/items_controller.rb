@@ -27,8 +27,12 @@ class ItemsController < ApplicationController
         format.xml  { render xml:  @item }
       end
     else
-      flash.now[:notice] = "The item was not created."
-      render :edit
+      respond_to do |format|
+        format.html do
+          flash.now[:notice] = "The item was not created."
+          render :edit
+        end
+      end
     end
   end
 
