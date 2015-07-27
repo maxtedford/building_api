@@ -21,7 +21,9 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
 
     if @item.save
-      redirect_to items_path, notice: "The item was created."
+      respond_to do |format|
+        format.html { redirect_to items_path, notice: "The item was created." }
+      end
     else
       flash.now[:notice] = "The item was not created."
       render :edit
