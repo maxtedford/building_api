@@ -1,6 +1,12 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all
+    
+    respond_to do |format|
+      format.html do
+        @items
+      end
+    end
   end
 
   def show
