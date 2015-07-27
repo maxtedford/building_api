@@ -14,7 +14,7 @@ class Api::V1::ItemsController < ApplicationController
   end
   
   def update
-    respond_with Item.find(params[:id])
+    respond_with Item.update(params[:id], item_params)
   end
   
   private
