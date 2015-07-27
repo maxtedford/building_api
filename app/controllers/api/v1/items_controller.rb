@@ -1,6 +1,8 @@
 class Api::V1::ItemsController < ApplicationController
   respond_to :json, :xml
   
+  before_action :authenticate
+  
   def index
     respond_with Item.all
   end
