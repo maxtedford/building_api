@@ -3,14 +3,10 @@ class ItemsController < ApplicationController
   
   def index
     @items = Item.all
-    
-    respond_with @items
   end
 
   def show
     @item = Item.find_by(id: params[:id])
-    
-    respond_with @item
   end
 
   def new
