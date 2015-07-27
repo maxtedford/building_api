@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  respond_to :html, :json, :html
+  respond_to :html, :json, :xml
   
   def index
     @items = Item.all
