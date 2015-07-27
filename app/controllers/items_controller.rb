@@ -32,6 +32,7 @@ class ItemsController < ApplicationController
           flash.now[:notice] = "The item was not created."
           render :edit
         end
+        format.json { render json: { messages: @item.errors.full_messages } }
       end
     end
   end
