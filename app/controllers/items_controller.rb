@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.html { @item }
       format.json { render json: @item }
+      format.xml  { render xml:  @item }
     end
   end
 
