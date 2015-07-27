@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
     
     respond_to do |format|
       format.html { @items }
-      format.json { render :json => @items }
+      format.json { render json: @items }
     end
   end
 
